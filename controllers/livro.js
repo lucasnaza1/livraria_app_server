@@ -40,7 +40,7 @@ function patchLivro(req, res) {
         const body = req.body
 
         modificaLivro(body, id)
-        res.send('Item modificado com sucesso')
+        res.send('Livro modificado com sucesso')
     } catch (error) {
         res.status(500)
         res.send(error.message)
