@@ -7,7 +7,6 @@ router.get('/', getLivros)
 
 router.get('/:id', getLivro)
 
-
 router.post('/', postLivro)
 
 router.patch('/', (req, res) => {
