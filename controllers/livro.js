@@ -29,9 +29,15 @@ function getLivro(req, res) {
 function postLivro(req, res) {
     try {
         const livroNovo = req.body
-        insereLivro(livroNovo)
-        res.send('Livro cadastrado com sucesso')
-        res.send(201)
+        if (req.body.nome) {
+            insereLivro(livroNovo)
+            res.send('Livro cadastrado com sucesso')
+            res.send(201)
+        } else {
+            res.status(422)
+            res.send('O campo nome é obrigatório')
+        }
+
         // protocolo de criado
     } catch (error) {
         res.status(500)
