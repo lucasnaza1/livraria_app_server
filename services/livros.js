@@ -1,5 +1,4 @@
 const fs = require('fs')
-const { stringify } = require('querystring')
 
 function getTodosLivros() {
     return JSON.parse(fs.readFileSync('livros.json'))
