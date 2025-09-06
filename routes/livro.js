@@ -6,11 +6,8 @@ const router = Router()
 router.get('/', getLivros)
 // GET --> um livro específicado pelo id
 router.get('/:id', getLivro)
-
 router.post('/', postLivro)
-
 router.patch('/:id', patchLivro)
-
 router.delete('/:id', deleteLivro)
 
 module.exports = router 
