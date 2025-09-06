@@ -1,9 +1,9 @@
-const { getTodosfavoritos, deletaFavoritoId } = require("../services/favoritos")
+const { getTodosfavoritos, deletaFavoritoId, insereFavorito } = require("../services/favoritos")
 
 function getFavoritos(req, res) {
     try {
-        const favoritos = getTodosfavoritos()
-        res.send(favoritos)
+        const livros = getTodosfavoritos()
+        res.send(livros)
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -13,10 +13,8 @@ function getFavoritos(req, res) {
 function postFavoritos(req, res) {
     try {
         const id = req.params.id
-            (req.body.nome)
-        insereFavoritos(id)
-        res.send('Favoritos cadastrado com sucesso')
-        res.send(201)
+        insereFavorito(id)
+        res.send(201).send('Favoritos cadastrado com sucesso')
     } catch (error) {
         res.status(500)
         res.send(error.message)
